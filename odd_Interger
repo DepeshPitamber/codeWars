@@ -1,0 +1,42 @@
+function findOdd(A) {
+    document.write("The input array is " + A); //display the input array
+    var theArray = A; //move the input array to a temp array variable
+    theArray.sort(); //sort the temp array
+
+    document.write("<br>");
+    document.write("The sorted array is " + theArray); //display the sorted array
+    document.write("<br>");
+
+
+    /*
+
+    //This portion takes the temp array and displays it further into index number and element value
+
+    theArray.forEach(myFunction);
+
+    function myFunction(element, index) {
+        document.write("index[" + index + "]: " + element);
+        document.write("<br>");
+    }
+    */
+
+    var current = null; //sets the current value to a null
+    var cnt = 0; // sets cnt to 0
+    for (var i = 0; i <= theArray.length; i++) { //loops through the sorted array till it is less than or = to the max length
+        if (theArray[i] != current) { //if the value of element in the current index is not = to the current value
+            if (cnt > 0) {
+                if (cnt % 2 !== 0) { //checks if the remainder not = 0 (its an odd number)
+                    document.write("<br>");
+                    document.write(current + " occurs " + cnt + " times,");
+                    document.write("<br>");
+                }
+            }
+            current = theArray[i]; //cnt is not > 0, make current equal to the element value of the current index
+            cnt = 1; //make cnt = 1
+        } else { //it is equal to the current so it adds to the cnt value
+            cnt++;
+        }
+    }
+
+}
+

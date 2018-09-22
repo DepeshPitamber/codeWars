@@ -1,0 +1,36 @@
+*
+The manager of the car rental makes you some good offers.
+
+Every day you rent the car costs $40.
+
+If you rent the car for 7 or more days, you get $50 off your total.
+
+if you rent the car for 3 or more days, you get $20 off your total.
+
+Write a code that gives out the total amount for different days(d).
+
+ */
+
+function rentalCarCost(d) {
+    if (d < 3){
+        var carCost = 40;
+        var total = carCost * d;
+        //document.write("The total cost for " + d + " days: " + total);
+        return total;
+    }
+
+    if (d >= 3 && d < 7) {
+        var carCost = 40;
+        var total = ((carCost * d) - 20);
+        //document.write("The total cost for " + d + " days: " + total);
+        return total;
+    }
+
+    if (d >= 7){
+        var carCost = 40;
+        var total = ((carCost * d) - 50);
+        //document.write("The total cost for " + d + " days: " + total);
+        return total;
+    }
+
+}

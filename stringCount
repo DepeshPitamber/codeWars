@@ -1,0 +1,29 @@
+function myFunction(str, num) {
+
+    // document.body.style.backgroundColor = "orange";
+
+    document.write("The input string is:     " + str + " and it has " + str.length + " characters in the string");
+
+    var arr = str.split(" "); //takes the input string and splits it into an array
+
+    document.write("<br>");
+    document.write("This is the string split into an array:    " + arr);
+    document.write("<br>");
+    document.write("<br>");
+
+    var count = 0;
+    while (count < arr.length) { // count starts at the first array element and compares to the length of the full array
+        var word = arr[count];// move the array element into the "word" placeholder
+        var x = word.length; //check the length of the array element
+        var letterCount = 0;
+        for (var a = 0; a < x; a++) { //loop thru the element and count the number of characters
+            letterCount++;
+        }
+        if (letterCount > num) { //display the element based on the user input number
+            document.write(arr[count]);
+        }
+        letterCount = 0; //reset the letterCount for the next array element
+        document.write("<br>");
+        count++;
+    }
+}
